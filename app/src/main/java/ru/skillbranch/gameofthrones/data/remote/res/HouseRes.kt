@@ -1,5 +1,8 @@
 package ru.skillbranch.gameofthrones.data.remote.res
 
+import ru.skillbranch.gameofthrones.data.local.entities.House
+import ru.skillbranch.gameofthrones.extensions.dropLastUntil
+
 data class HouseRes(
     val url: String,
     val name: String,
@@ -17,4 +20,32 @@ data class HouseRes(
     val ancestralWeapons: List<String> = listOf(),
     val cadetBranches: List<Any> = listOf(),
     val swornMembers: List<String> = listOf()
-)
+) : IRes {
+    fun toHouse(): House {
+        return House(
+            url.lastSegment(),
+            name,
+            region,
+            coatOfArms,
+            words,
+            titles,
+            seats,
+            currentLord,
+            heir,
+            overlord,
+            founded,
+            founder,
+            diedOut,
+            ancestralWeapons)
+    }
+
+    override val id: String
+        get() = url.lastSegment()
+
+    val shortName : String
+        get() = name.split(" ").dropLastUntil { it == "of" }
+
+    val members : List<String>
+        get() = swornMembers.map { it.lastSegment() }
+
+}
