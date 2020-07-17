@@ -14,4 +14,13 @@
        android:src="@drawable/splash_layout"
        />
 
+   <ImageView
+       android:id="@+id/image_animated_dragon"
+       android:layout_width="120dp"
+       android:layout_height="120dp"
+       android:src="@drawable/animatorvectordrawable"
+       android:layout_gravity="bottom|end"
+       android:layout_margin="@dimen/big_dimen"
+       />
+
 </FrameLayout>
