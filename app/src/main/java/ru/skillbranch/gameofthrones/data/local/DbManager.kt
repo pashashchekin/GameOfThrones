@@ -23,7 +23,6 @@ object DbManager {
 @Database(entities = [House::class, Character::class],
 version = AppDatabase.DATABASE_VERSION,
 exportSchema = false,
-//views = [CharacterItem::class,CharacterFull::class])
 views = [CharacterItem::class])
 @TypeConverters(GoTConverter::class)
 abstract class AppDatabase : RoomDatabase() {
