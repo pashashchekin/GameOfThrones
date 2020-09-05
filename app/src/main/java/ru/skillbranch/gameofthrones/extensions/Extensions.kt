@@ -10,13 +10,13 @@ import androidx.lifecycle.MediatorLiveData
 val Context.isNetworkAvailable: Boolean
     get() {
         val cm : ConnectivityManager =
-            getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager;
-        val netInfo : NetworkInfo = cm.getActiveNetworkInfo();
-        if (netInfo != null && netInfo.isConnectedOrConnecting())
+            getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val netInfo : NetworkInfo = cm.activeNetworkInfo
+        if (netInfo != null && netInfo.isConnectedOrConnecting)
         {
-            return true;
+            return true
         }
-        return false;
+        return false
     }
 
 fun List<String>.dropLastUntil(predicate: (String) -> Boolean): String {

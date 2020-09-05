@@ -1,15 +1,13 @@
-/**
- * Created by Ilia Shelkovenko on 12.07.2020.
- */
+
 
 package ru.skillbranch.gameofthrones.ui.houses.house
 
 import android.util.Log
 import androidx.lifecycle.*
 import ru.skillbranch.gameofthrones.data.local.entities.CharacterItem
+import ru.skillbranch.gameofthrones.extensions.combineAndCompute
 import ru.skillbranch.gameofthrones.repositories.RootRepository
 import java.lang.IllegalArgumentException
-import ru.skillbranch.gameofthrones.extensions.combineAndCompute
 
 class HouseViewModel(private val houseName : String) : ViewModel()  {
     private val repository = RootRepository

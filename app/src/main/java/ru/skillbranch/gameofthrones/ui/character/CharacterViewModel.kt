@@ -4,13 +4,10 @@
 
 package ru.skillbranch.gameofthrones.ui.character
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.liveData
-import ru.skillbranch.gameofthrones.data.local.entities.CharacterFull
-import ru.skillbranch.gameofthrones.extensions.combineAndCompute
 import ru.skillbranch.gameofthrones.repositories.RootRepository
 import java.lang.IllegalArgumentException
 import ru.skillbranch.gameofthrones.data.local.entities.Character
